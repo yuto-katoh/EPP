@@ -1,0 +1,24 @@
+set log x
+set key top outside
+#set xrange [2e-6:2e0]
+#set yrange [40:260]
+set xrange [2e-6:1e-2]
+set yrange [100:220]
+set ytics 10
+set ylabel "Height [km]"
+set xlabel "Collision rate per electron [1/m]"
+set format x "10^{%L}@
+set size ratio 2.
+set grid
+plot "run_MIR_DMSP_00_E03/fort.300000064" u ($2/1e4/2e2):1 t "   65 eV" w l lw 4 lt rgbcolor 0x000080 dashtype solid
+replot "run_MIR_DMSP_00_E04/fort.300000096" u ($2/1e4/2e2):1 t "   95 eV" w l lw 4 lt rgbcolor 0x0000FF dashtype solid
+replot "run_MIR_DMSP_00_E05/fort.300000128" u ($2/1e4/2e2):1 t "  139 eV" w l lw 4 lt rgbcolor '0x00FFFF' dashtype solid
+replot "run_MIR_DMSP_00_E06/fort.300000192" u ($2/1e4/2e2):1 t "  204 eV" w l lw 4 lt rgbcolor '0x00FF00' dashtype solid
+replot "run_MIR_DMSP_00_E07/fort.300000288" u ($2/1e4/2e2):1 t "  300 eV" w l lw 4 lt rgbcolor '0x008000' dashtype solid
+replot "run_MIR_DMSP_00_E08/fort.300000448" u ($2/1e4/2e2):1 t "  440 eV" w l lw 4 lt rgbcolor '0x008080' dashtype solid
+replot "run_MIR_DMSP_00_E09/fort.300000640" u ($2/1e4/2e2):1 t "  650 eV" w l lw 4 lt rgbcolor '0x800080' dashtype solid
+replot "run_MIR_DMSP_00_E10/fort.300000960" u ($2/1e4/2e2):1 t "  950 eV" w l lw 4 lt rgbcolor '0xFFFF00' dashtype solid
+replot "run_MIR_DMSP_00_E11/fort.300001376" u ($2/1e4/2e2):1 t "1.39 keV" w l lw 4 lt rgbcolor '0xFFD700' dashtype solid
+replot "run_MIR_DMSP_00_E12/fort.300002048" u ($2/1e4/2e2):1 t "2.04 keV" w l lw 4 lt rgbcolor '0xFFA500' dashtype solid
+replot "run_MIR_DMSP_00_E13/fort.300003008" u ($2/1e4/2e2):1 t "3.00 keV" w l lw 4 lt rgbcolor '0xFF00FF' dashtype solid
+replot "run_MIR_DMSP_00_E14/fort.300004416" u ($2/1e4/2e2):1 t "4.40 keV" w l lw 4 lt rgbcolor '0xFF0000' dashtype solid
