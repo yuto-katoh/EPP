@@ -1,0 +1,8 @@
+set grid
+set log x
+set xlabel "Number density [m-3]
+set ylabel "Height [km]"
+plot "msis_dns.dat" u ($2*1e6):1 t "O" w l lw 4
+replot "msis_dns.dat" u ($3*1e6):1 t "N_2" w l lw 4
+replot "msis_dns.dat" u ($4*1e6):1 t "O_2" w l lw 4
+replot "msis_dns.dat" u ($5*1e6):1 t "He" w l lw 4
