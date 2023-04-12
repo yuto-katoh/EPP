@@ -1,0 +1,16 @@
+set log x
+set xrange [2e-6:2e0]
+set yrange [40:260]
+set ytics 10
+set ylabel "Height [km]"
+set xlabel "Collision rate per electron [1/m]"
+set format x "10^{%L}@
+set size ratio 2.
+set grid
+plot "run_MIR_001keV_PA70/fort.370000992" u ($2/1e4/2e2):1 t "   1 keV" w l lw 4 lt rgbcolor 'blue' dashtype solid
+replot "run_MIR_004keV_PA70/fort.370004000" u ($2/1e4/2e2):1 t "   4 keV" w l lw 4 lt rgbcolor 'cyan' dashtype solid
+replot "run_MIR_010keV_PA70/fort.370009984" u ($2/1e4/2e2):1 t "  10 keV" w l lw 4 lt rgbcolor 'gray' dashtype solid
+replot "run_MIR_040keV_PA70/fort.370040000" u ($2/1e4/2e2):1 t "  40 keV" w l lw 4 lt rgbcolor 'green' dashtype solid
+replot "run_MIR_100keV_PA70/fort.370100000" u ($2/1e4/2e2):1 t " 100 keV" w l lw 4 lt rgbcolor 'yellow' dashtype solid
+replot "run_MIR_400keV_PA70/fort.370400000" u ($2/1e4/2e2):1 t " 400 keV" w l lw 4 lt rgbcolor 'red' dashtype solid
+replot "run_MIR_1000keV_PA70/fort.371000000" u ($2/1e4/2e2):1 t "1000 keV" w l lw 4 lt rgbcolor 'black' dashtype solid
